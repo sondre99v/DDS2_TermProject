@@ -35,11 +35,13 @@ program testPr_hdlc(
   task VerifyAbortReceive(logic [127:0][7:0] data, int Size);
     logic [7:0] ReadData;
 
+    // Read the register Rx_SC and check that the abort bit is set
     ReadAddress(3'b010, ReadData);
     assert(ReadData[3]) 
       $display("PASS: Abort bit set"); 
       else $display("FAIL: Abort bit not set"); // Assert that Rx_AbortSignal is set
     
+    // Read the data buffer (Rx_buff) and check that it is zero
     ReadAddress(3'b011, ReadData);
     assert(ReadData == 0) 
       $display("PASS: RxBuff = 0"); 
@@ -53,6 +55,7 @@ program testPr_hdlc(
     logic [7:0] ReadData;
     wait(uin_hdlc.Rx_Ready);
 
+    // Read the register Rx_SC and chec that neither the abort bit, nor the overflow bit is set
     ReadAddress(3'b010, ReadData);
     assert(!ReadData[3]) 
       $display("PASS: Abort bit not set"); 
@@ -61,7 +64,7 @@ program testPr_hdlc(
       $display("PASS: Overflow bit not set"); 
       else $display("FAIL: Overflow bit set"); // Assert that Rx_AbortSignal is set
     
-    
+    // Read the data buffer (Rx_buff) and check that it is equal to the first transmitted data
     ReadAddress(3'b011, ReadData);
     assert(ReadData == data[0]) 
       $display("PASS: RxBuff equal to first data"); 
@@ -76,11 +79,13 @@ program testPr_hdlc(
     logic [7:0] ReadData;
     wait(uin_hdlc.Rx_Ready);
 
+    // Read the register Rx_SC and check that the overflow bit is set
     ReadAddress(3'b010, ReadData);
     assert(ReadData[4]) 
       $display("PASS: Overflow bit set"); 
       else $display("FAIL: Overflow bit not set"); // Assert that Rx_OverflowSignal is set
     
+    // Read the data buffer (Rx_buff) and check that it is equal to the first transmitted data
     ReadAddress(3'b011, ReadData);
     assert(ReadData == data[0]) 
       $display("PASS: RxBuff = data[0]"); 

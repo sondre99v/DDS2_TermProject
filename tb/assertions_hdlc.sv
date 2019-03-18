@@ -34,7 +34,8 @@ module assertions_hdlc (
   /*******************************************
    *  Verify correct Rx_FlagDetect behavior  *
    *******************************************/
-
+  
+  // Sequence to detect '01111110'
   sequence Rx_flag;
     @(posedge Clk) !Rx ##1 Rx [*6] ##1 !Rx;
   endsequence
@@ -55,7 +56,7 @@ module assertions_hdlc (
    *  Verify correct Rx_AbortSignal behavior  *
    ********************************************/
 
-  //If abort is detected during valid frame. then abort signal should go high
+  // If abort is detected during valid frame. then abort signal should go high
   property RX_AbortSignal;
     @(posedge Clk) Rx_AbortDetect && Rx_ValidFrame |=> Rx_AbortSignal;
   endproperty
