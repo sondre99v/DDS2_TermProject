@@ -1,0 +1,38 @@
+Concurrent assertions already check that...
+	...Rx_FlagDetect actually detects the RX flag sequence
+	...Rx_AbortSignal acutally detects an abort
+Specifications:
+- 7) Check that in Idle, the Device outputs 11111111....
+
+R 1) Extend task verify normal receive to verify all 128 bytes
+R 2) Extend task verify abort receive to check all 128 bytes, and add verify error and -dropped frame tasks
+R 3) Check all bits, for all RX cases
+R 10) Abort pattern detection. Done, twice
+R 12) Check internal signal Rx_EoF on completion/abortion of RX frame
+R 13) Check overflow on RX, already done
+R 14) Check Rx_FrameLength in RX_SC agains bitstream data
+R 15) Check that Rx_Ready in RX_SC is high after a full byte has been received
+R 16) Wrong FCS in the bitstream should raise Rx_FrameError in Rx_SC
+
+T 4) Transmit TX output check. Write code for transmitting
+T 5) Transmit start and end patterns
+T 6) Zero stuffing
+T 8) Writing to Tx_AbortFrame in TX_SC generates an abort sequence
+T 9) Check internal signal Tx_AbortedTrans -> Concurrent Assertion
+T 11) On transmission, check that CRC is correct
+T 17) Transmission -> Check TX_Done afterwards
+T 18) Check that TX_Full goes high when writing 126 bytes to the buffer
+
+RX Cases:
+Normal w/ correct FCS and varying number of bytes
+Normal w/ incorrect FCS and varying number of bytes
+Non-byte aliged w/ varying number of bytes
+Aborted with varying length before abort
+Overflowed
+New frame received before current one is read out
+Normal but dropped
+
+TX Cases:
+Normal transmission with varying lengths
+Start and signal abort before completion
+
