@@ -70,6 +70,11 @@ program testPr_hdlc(
       $display("PASS: RxBuff equal to first data"); 
       else $display("FAIL: RxBuff = %h (not equal to first data = %h)", ReadData, data[Size - 1]); // Assert that Rx_Buff is zero
 
+    ReadAddress(3'b011, ReadData);
+    assert(ReadData == data[1])
+      $display("PASS1245");
+      else $display("FAIL1234");
+
   
   endtask
 

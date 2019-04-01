@@ -1,5 +1,5 @@
 # vsim -assertdebug -c -voptargs="+acc" test_hdlc bind_hdlc -do "log -r *; run -all; exit" 
-# Start time: 15:51:49 on Mar 11,2019
+# Start time: 14:24:36 on Apr 01,2019
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "TxFCS(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "RxBuff(fast)".
@@ -53,78 +53,83 @@
 # PASS: Abort bit not set
 # PASS: Overflow bit not set
 # PASS: RxBuff equal to first data
+# PASS1245
 # *************************************************************
-#                69250 - Starting task Receive - Abort
-# *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
-# PASS: Abort bit set
-# PASS: RxBuff = 0
-# *************************************************************
-#               259250 - Starting task Receive - Overflow
-# *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
-# PASS: Overflow bit set
-# PASS: RxBuff = data[0]
-# *************************************************************
-#               814250 - Starting task Receive - Normal
-# *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
-# PASS: Abort bit not set
-# PASS: Overflow bit not set
-# PASS: RxBuff equal to first data
-# *************************************************************
-#              1024750 - Starting task Receive - Normal
-# *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
-# PASS: Abort bit not set
-# PASS: Overflow bit not set
-# PASS: RxBuff equal to first data
-# *************************************************************
-#              1563250 - Starting task Receive - Abort
+#                70250 - Starting task Receive - Abort
 # *************************************************************
 # PASS: Flag detect
 # PASS: Abort signal
 # PASS: Abort bit set
 # PASS: RxBuff = 0
 # *************************************************************
-#              2089750 - Starting task Receive - Overflow
+#               260250 - Starting task Receive - Overflow
 # *************************************************************
 # PASS: Flag detect
 # PASS: Flag detect
 # PASS: Overflow bit set
 # PASS: RxBuff = data[0]
 # *************************************************************
-#              2639750 - Starting task Receive - Normal
+#               815250 - Starting task Receive - Normal
 # *************************************************************
 # PASS: Flag detect
 # PASS: Flag detect
 # PASS: Abort bit not set
 # PASS: Overflow bit not set
 # PASS: RxBuff equal to first data
+# PASS1245
 # *************************************************************
-#              2771250 - Starting task Receive - Normal
+#              1026750 - Starting task Receive - Normal
 # *************************************************************
 # PASS: Flag detect
 # PASS: Flag detect
 # PASS: Abort bit not set
 # PASS: Overflow bit not set
 # PASS: RxBuff equal to first data
+# PASS1245
 # *************************************************************
-#              2990250 - Finishing Test Program
+#              1566250 - Starting task Receive - Abort
 # *************************************************************
-# ** Note: $stop    : ./testPr_hdlc.sv(118)
-#    Time: 2990250 ns  Iteration: 1  Instance: /test_hdlc/u_testPr
-# Break in Module testPr_hdlc at ./testPr_hdlc.sv line 118
-# Stopped at ./testPr_hdlc.sv line 118
+# PASS: Flag detect
+# PASS: Abort signal
+# PASS: Abort bit set
+# PASS: RxBuff = 0
+# *************************************************************
+#              2092750 - Starting task Receive - Overflow
+# *************************************************************
+# PASS: Flag detect
+# PASS: Flag detect
+# PASS: Overflow bit set
+# PASS: RxBuff = data[0]
+# *************************************************************
+#              2642750 - Starting task Receive - Normal
+# *************************************************************
+# PASS: Flag detect
+# PASS: Flag detect
+# PASS: Abort bit not set
+# PASS: Overflow bit not set
+# PASS: RxBuff equal to first data
+# PASS1245
+# *************************************************************
+#              2775250 - Starting task Receive - Normal
+# *************************************************************
+# PASS: Flag detect
+# PASS: Flag detect
+# PASS: Abort bit not set
+# PASS: Overflow bit not set
+# PASS: RxBuff equal to first data
+# PASS1245
+# *************************************************************
+#              2995250 - Finishing Test Program
+# *************************************************************
+# ** Note: $stop    : ./testPr_hdlc.sv(128)
+#    Time: 2995250 ns  Iteration: 1  Instance: /test_hdlc/u_testPr
+# Break in Module testPr_hdlc at ./testPr_hdlc.sv line 128
+# Stopped at ./testPr_hdlc.sv line 128
 #  exit
 # *********************************
 # *                               *
 # * 	Assertion Errors: 0	  *
 # *                               *
 # *********************************
-# End time: 15:51:52 on Mar 11,2019, Elapsed time: 0:00:03
+# End time: 14:24:40 on Apr 01,2019, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 4
