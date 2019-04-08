@@ -18,7 +18,7 @@ T 4) Transmit TX output check. Write code for transmitting
 T 5) Transmit start and end patterns
 T 6) Zero stuffing
 T 8) Writing to Tx_AbortFrame in TX_SC generates an abort sequence
-T 9) Check internal signal Tx_AbortedTrans
+T 9) Check internal signal Tx_AbortedTrans -> Concurrent Assertion
 T 11) On transmission, check that CRC is correct
 T 17) Transmission -> Check TX_Done afterwards
 T 18) Check that TX_Full goes high when writing 126 bytes to the buffer

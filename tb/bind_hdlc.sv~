@@ -21,8 +21,8 @@ module bind_hdlc ();
     .Rx_EoF           (uin_hdlc.Rx_EoF),
 
     .Tx               (uin_hdlc.Tx),
-    .Tx_ValidFrame    (uin_hdlc.Tx_ValidFrame),
-    .Tx_AbortFrame    (uin_hdlc.Tx_AbortFrame)
+    .Tx_ValidFrame        (uin_hdlc.Tx),
+    .Tx_AbortFrame           (uin_hdlc.Tx)
   );
 
 endmodule
