@@ -18,9 +18,12 @@ module test_hdlc ();
   //Internal assignments
   assign uin_hdlc.Tx_Done            = u_dut.Tx_Done;
   assign uin_hdlc.Tx_FCSDone         = u_dut.Tx_FCSDone;
+  assign uin_hdlc.Tx_ValidFrame      = u_dut.Tx_ValidFrame;
+  assign uin_hdlc.Tx_AbortFrame      = u_dut.Tx_AbortFrame;
+  assign uin_hdlc.Tx_Data            = u_dut.Tx_Data;			// [7:0]
 
   assign uin_hdlc.Rx_ValidFrame      = u_dut.Rx_ValidFrame;
-  assign uin_hdlc.Rx_Data            = u_dut.Rx_Data;
+  assign uin_hdlc.Rx_Data            = u_dut.Rx_Data;			// [7:0]
   assign uin_hdlc.Rx_AbortSignal     = u_dut.Rx_AbortSignal;
   assign uin_hdlc.Rx_WrBuff          = u_dut.Rx_WrBuff;
   assign uin_hdlc.Rx_EoF             = u_dut.Rx_EoF;
@@ -64,7 +67,102 @@ module test_hdlc ();
     .TxEN        (uin_hdlc.TxEN)
   );
 
-  // Coverage stuff...
+  // Coverage checks
+  covergroup hdlc_cg @(posedge uin_hdlc.Clk);
+    // RX
+    rx_data: coverpoint uin_hdlc.Rx_Data
+    {
+      bins bin_zero = {0};
+      bins bin_small = {[1:15]};
+      bins bin_large = {[16:254]};
+      bins bin_max = {255};
+      bins bin_others = default;
+    }
+
+    rx_drop: coverpoint uin_hdlc.Rx_Drop
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    rx_frame_error: coverpoint uin_hdlc.Rx_FrameError
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    rx_overflow: coverpoint uin_hdlc.Rx_Overflow
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    rx_flag_detect: coverpoint uin_hdlc.Rx_FlagDetect
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    rx_abort_detect: coverpoint uin_hdlc.Rx_AbortDetect
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    rx_data_drop:         cross rx_data, rx_drop;
+    rx_data_frame_error:  cross rx_data, rx_frame_error;
+    rx_data_overflow:     cross rx_data, rx_overflow;
+    rx_data_flag_detect:  cross rx_data, rx_flag_detect;
+    rx_data_abort_detect: cross rx_data, rx_abort_detect;
+  
+
+
+    // TX
+    tx_data: coverpoint uin_hdlc.Tx_Data
+    {
+      bins bin_zero = {0};
+      bins bin_small = {[1:15]};
+      bins bin_large = {[16:254]};
+      bins bin_max = {255};
+      bins bin_others = default;
+    }
+
+    tx_done: coverpoint uin_hdlc.Tx_Done
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    tx_valid_frame: coverpoint uin_hdlc.Tx_ValidFrame
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    tx_abort_frame: coverpoint uin_hdlc.Tx_AbortFrame
+    {
+      bins bin_low = {0};
+      bins bin_high = {1};
+      bins bin_others = default;
+    }
+
+    tx_data_done:         cross tx_data, rx_done;
+    tx_data_valid_frame:  cross tx_data, rx_valid_frame;
+    tx_data_abort_frame:  cross tx_data, rx_abort_frame;
+
+  endgroup
+
+  hdlc_cg hdlc_cg_Inst = new();
+  always @(posedge uin_hdlc.Clk) hdlc_cg_Inst.sample();
+
+
 
   //Test program
   testPr_hdlc u_testPr(

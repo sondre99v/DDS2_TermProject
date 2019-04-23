@@ -52,7 +52,7 @@ module assertions_hdlc (
   endproperty
 
   RX_FlagDetect_Assert : assert property (RX_FlagDetect) begin
-    $display("PASS: Flag detect");
+    //$display("PASS: Flag detect");
   end else begin 
     $error("Flag sequence did not generate FlagDetect"); 
     ErrCntAssertions++; 
@@ -100,7 +100,7 @@ module assertions_hdlc (
 
   // If Tx_ValidFrame has been low for four cycles, the dut is in idle, and Tx should be high
   property TX_TxHighInIdle;
-    @(posedge Clk) !Tx_ValidFrame[*9] |-> Tx;
+    @(posedge Clk) !Tx_ValidFrame[*10] |-> Tx;
   endproperty
 
   TX_TxHighInIdle_Assert : assert property (TX_TxHighInIdle)

@@ -52,7 +52,7 @@ module assertions_hdlc (
   endproperty
 
   RX_FlagDetect_Assert : assert property (RX_FlagDetect) begin
-    $display("PASS: Flag detect");
+    //$display("PASS: Flag detect");
   end else begin 
     $error("Flag sequence did not generate FlagDetect"); 
     ErrCntAssertions++; 
@@ -68,7 +68,7 @@ module assertions_hdlc (
   endproperty
 
   RX_AbortSignal_Assert : assert property (RX_AbortSignal) begin
-    $display("PASS: Abort signal");
+    //$display("PASS: Abort signal");
   end else begin 
     $error("AbortSignal did not go high after AbortDetect during validframe"); 
     ErrCntAssertions++; 
@@ -88,7 +88,7 @@ module assertions_hdlc (
   endproperty
 
   TX_AbortFrame_Assert : assert property (TX_AbortFrameProperty) begin
-    $display("PASS: Abort flag generated");
+    //$display("PASS: Abort flag generated");
   end else begin 
     $error("FAIL: Abort flag not generated after abort was issued"); 
     ErrCntAssertions++; 

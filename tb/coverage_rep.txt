@@ -1,0 +1,343 @@
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /test_hdlc/hdlc_cg                               100.0%        100    Covered              
+    covered/total bins:                                    88         88                      
+    missing/total bins:                                     0         88                      
+    % Hit:                                             100.0%        100                      
+    Coverpoint hdlc_cg::rx_data                        100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::rx_drop                        100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::rx_frame_error                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::rx_overflow                    100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::rx_flag_detect                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::rx_abort_detect                100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::tx_data                        100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::tx_done                        100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::tx_valid_frame                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint hdlc_cg::tx_abort_frame                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::rx_data_drop                        100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::rx_data_frame_error                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::rx_data_overflow                    100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::rx_data_flag_detect                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::rx_data_abort_detect                100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::tx_data_done                        100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::tx_data_valid_frame                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Cross hdlc_cg::tx_data_abort_frame                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+ Covergroup instance \/test_hdlc/hdlc_cg_Inst          100.0%        100    Covered              
+    covered/total bins:                                    88         88                      
+    missing/total bins:                                     0         88                      
+    % Hit:                                             100.0%        100                      
+    Coverpoint rx_data                                 100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin bin_zero                                    21118          1    Covered              
+        bin bin_small                                  289872          1    Covered              
+        bin bin_large                                 6009970          1    Covered              
+        bin bin_max                                     20412          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint rx_drop                                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   6339362          1    Covered              
+        bin bin_high                                     2010          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint rx_frame_error                          100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   5981632          1    Covered              
+        bin bin_high                                   359740          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint rx_overflow                             100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   6054476          1    Covered              
+        bin bin_high                                   286896          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint rx_flag_detect                          100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   6331848          1    Covered              
+        bin bin_high                                     9524          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint rx_abort_detect                         100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   6336300          1    Covered              
+        bin bin_high                                     5072          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint tx_data                                 100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin bin_zero                                    17226          1    Covered              
+        bin bin_small                                   74804          1    Covered              
+        bin bin_large                                 1043720          1    Covered              
+        bin bin_max                                   5205622          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint tx_done                                 100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   1496810          1    Covered              
+        bin bin_high                                  4844562          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint tx_valid_frame                          100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   5848006          1    Covered              
+        bin bin_high                                   493366          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Coverpoint tx_abort_frame                          100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin bin_low                                   6340764          1    Covered              
+        bin bin_high                                      608          1    Covered              
+        default bin bin_others                              0               ZERO                 
+    Cross rx_data_drop                                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          21108          1    Covered              
+        bin <bin_small,bin_low>                        289768          1    Covered              
+        bin <bin_large,bin_low>                       6008080          1    Covered              
+        bin <bin_max,bin_low>                           20406          1    Covered              
+        bin <bin_zero,bin_high>                            10          1    Covered              
+        bin <bin_small,bin_high>                          104          1    Covered              
+        bin <bin_large,bin_high>                         1890          1    Covered              
+        bin <bin_max,bin_high>                              6          1    Covered              
+    Cross rx_data_frame_error                          100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          20546          1    Covered              
+        bin <bin_small,bin_low>                        261836          1    Covered              
+        bin <bin_large,bin_low>                       5680554          1    Covered              
+        bin <bin_max,bin_low>                           18696          1    Covered              
+        bin <bin_zero,bin_high>                           572          1    Covered              
+        bin <bin_small,bin_high>                        28036          1    Covered              
+        bin <bin_large,bin_high>                       329416          1    Covered              
+        bin <bin_max,bin_high>                           1716          1    Covered              
+    Cross rx_data_overflow                             100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          17982          1    Covered              
+        bin <bin_small,bin_low>                        270828          1    Covered              
+        bin <bin_large,bin_low>                       5748342          1    Covered              
+        bin <bin_max,bin_low>                           17324          1    Covered              
+        bin <bin_zero,bin_high>                          3136          1    Covered              
+        bin <bin_small,bin_high>                        19044          1    Covered              
+        bin <bin_large,bin_high>                       261628          1    Covered              
+        bin <bin_max,bin_high>                           3088          1    Covered              
+    Cross rx_data_flag_detect                          100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          21072          1    Covered              
+        bin <bin_small,bin_low>                        289300          1    Covered              
+        bin <bin_large,bin_low>                       6001094          1    Covered              
+        bin <bin_max,bin_low>                           20382          1    Covered              
+        bin <bin_zero,bin_high>                            46          1    Covered              
+        bin <bin_small,bin_high>                          572          1    Covered              
+        bin <bin_large,bin_high>                         8876          1    Covered              
+        bin <bin_max,bin_high>                             30          1    Covered              
+    Cross rx_data_abort_detect                         100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          21088          1    Covered              
+        bin <bin_small,bin_low>                        289570          1    Covered              
+        bin <bin_large,bin_low>                       6005248          1    Covered              
+        bin <bin_max,bin_low>                           20394          1    Covered              
+        bin <bin_zero,bin_high>                            30          1    Covered              
+        bin <bin_small,bin_high>                          302          1    Covered              
+        bin <bin_large,bin_high>                         4722          1    Covered              
+        bin <bin_max,bin_high>                             18          1    Covered              
+    Cross tx_data_done                                 100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                           1876          1    Covered              
+        bin <bin_small,bin_low>                         73916          1    Covered              
+        bin <bin_large,bin_low>                       1028150          1    Covered              
+        bin <bin_max,bin_low>                          392868          1    Covered              
+        bin <bin_zero,bin_high>                         15350          1    Covered              
+        bin <bin_small,bin_high>                          888          1    Covered              
+        bin <bin_large,bin_high>                        15570          1    Covered              
+        bin <bin_max,bin_high>                        4812754          1    Covered              
+    Cross tx_data_valid_frame                          100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                           1250          1    Covered              
+        bin <bin_small,bin_low>                         46998          1    Covered              
+        bin <bin_large,bin_low>                        595942          1    Covered              
+        bin <bin_max,bin_low>                         5203816          1    Covered              
+        bin <bin_zero,bin_high>                         15976          1    Covered              
+        bin <bin_small,bin_high>                        27806          1    Covered              
+        bin <bin_large,bin_high>                       447778          1    Covered              
+        bin <bin_max,bin_high>                           1806          1    Covered              
+    Cross tx_data_abort_frame                          100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <bin_zero,bin_low>                          17224          1    Covered              
+        bin <bin_small,bin_low>                         74772          1    Covered              
+        bin <bin_large,bin_low>                       1043152          1    Covered              
+        bin <bin_max,bin_low>                         5205616          1    Covered              
+        bin <bin_zero,bin_high>                             2          1    Covered              
+        bin <bin_small,bin_high>                           32          1    Covered              
+        bin <bin_large,bin_high>                          568          1    Covered              
+        bin <bin_max,bin_high>                              6          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+
+ASSERTION RESULTS:
+-------------------------------------------------------
+Name                 File(Line)           Failure Pass 
+                                          Count   Count 
+-------------------------------------------------------
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__125
+                     testPr_hdlc.sv(125)        0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__114
+                     testPr_hdlc.sv(114)        0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__103
+                     testPr_hdlc.sv(103)        0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__72
+                     testPr_hdlc.sv(72)         0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__61
+                     testPr_hdlc.sv(61)         0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__53
+                     testPr_hdlc.sv(53)         0   307
+/test_hdlc/u_testPr/VerifyNormalReceive/immed__45
+                     testPr_hdlc.sv(45)         0   307
+/test_hdlc/u_testPr/VerifyErrorOrDroppedReceive/immed__182
+                     testPr_hdlc.sv(182)        0  1615
+/test_hdlc/u_testPr/VerifyErrorOrDroppedReceive/immed__153
+                     testPr_hdlc.sv(153)        0  1615
+/test_hdlc/u_testPr/VerifyErrorOrDroppedReceive/immed__144
+                     testPr_hdlc.sv(144)        0  1615
+/test_hdlc/u_testPr/VerifyErrorOrDroppedReceive/#ublk#119480755#162/immed__163
+                     testPr_hdlc.sv(163)        0  1005
+/test_hdlc/u_testPr/VerifyErrorOrDroppedReceive/#ublk#119480755#171/immed__172
+                     testPr_hdlc.sv(172)        0   610
+/test_hdlc/u_testPr/VerifyAbortReceive/immed__226
+                     testPr_hdlc.sv(226)        0   307
+/test_hdlc/u_testPr/VerifyAbortReceive/immed__218
+                     testPr_hdlc.sv(218)        0   307
+/test_hdlc/u_testPr/VerifyAbortReceive/immed__210
+                     testPr_hdlc.sv(210)        0   307
+/test_hdlc/u_testPr/VerifyAbortReceive/immed__202
+                     testPr_hdlc.sv(202)        0   307
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__320
+                     testPr_hdlc.sv(320)        0   301
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__308
+                     testPr_hdlc.sv(308)       30   271
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__297
+                     testPr_hdlc.sv(297)        0   301
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__266
+                     testPr_hdlc.sv(266)       18   283
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__258
+                     testPr_hdlc.sv(258)        0   301
+/test_hdlc/u_testPr/VerifyOverflowReceive/immed__250
+                     testPr_hdlc.sv(250)       30   271
+/test_hdlc/u_testPr/VerifyRxBufIsZero128Times/immed__355
+                     testPr_hdlc.sv(355)        0  2223
+/test_hdlc/u_testPr/VerifyTxDoneLow/immed__373
+                     testPr_hdlc.sv(373)        0 38674
+/test_hdlc/u_testPr/VerifyAbortTransmit/immed__439
+                     testPr_hdlc.sv(439)        0   304
+/test_hdlc/u_testPr/VerifyAbortTransmit/immed__427
+                     testPr_hdlc.sv(427)        5   299
+/test_hdlc/u_testPr/VerifyAbortTransmit/immed__417
+                     testPr_hdlc.sv(417)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__521
+                     testPr_hdlc.sv(521)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__510
+                     testPr_hdlc.sv(510)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__500
+                     testPr_hdlc.sv(500)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__481
+                     testPr_hdlc.sv(481)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__467
+                     testPr_hdlc.sv(467)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/immed__457
+                     testPr_hdlc.sv(457)        0   304
+/test_hdlc/u_testPr/VerifyNormalTransmit/#anonblk#119480755#493#4#/#ublk#119480755#493/immed__494
+                     testPr_hdlc.sv(494)        0 19308
+/test_hdlc/u_testPr/Receive/#ublk#119480755#827/immed__829
+                     testPr_hdlc.sv(829)        0   612
+/test_hdlc/u_testPr/Transmit/#ublk#119480755#895/immed__897
+                     testPr_hdlc.sv(897)        0     6
+/test_hdlc/u_assertion_bind/RX_FlagDetect_Assert
+                     assertions_hdlc.sv(54)       0  4762
+/test_hdlc/u_assertion_bind/RX_AbortSignal_Assert
+                     assertions_hdlc.sv(70)       0   312
+/test_hdlc/u_assertion_bind/TX_AbortFrame_Assert
+                     assertions_hdlc.sv(90)       0   304
+/test_hdlc/u_assertion_bind/TX_TxHighInIdle_Assert
+                     assertions_hdlc.sv(106)       0 2918522

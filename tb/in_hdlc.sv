@@ -28,6 +28,7 @@ interface in_hdlc ();
   logic       Tx_FCSDone;
   logic       Tx_ValidFrame;
   logic       Tx_AbortFrame;
+  logic [7:0] Tx_Data;
 
   // RX
   logic Rx;

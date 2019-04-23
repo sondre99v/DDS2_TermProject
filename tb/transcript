@@ -1,13 +1,15 @@
-# vsim -assertdebug -c -voptargs="+acc" test_hdlc bind_hdlc -do "log -r *; run -all; exit" 
-# Start time: 17:40:13 on Apr 08,2019
+# vsim -assertdebug -c -voptargs="+acc" -coverage test_hdlc bind_hdlc -do "
+# log -r *
+# run -all; coverage report -assert -cover -cvg -details -file coverage_rep.txt;exit" 
+# Start time: 12:00:12 on Apr 23,2019
 # ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: test_hdlc.sv(52): (vopt-2685) [TFMPC] - Too few port connections for 'u_dut'.  Expected 13, found 12.
+# ** Warning: test_hdlc.sv(52): (vopt-2718) [TFMPC] - Missing connection for port 'Tx_Done'.
 # ** Note: (vopt-143) Recognized 1 FSM in module "TxFCS(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "RxBuff(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "TxController(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "RxController(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "TxBuff(fast)".
-# ** Warning: ./test_hdlc.sv(51): (vopt-2685) [TFMPC] - Too few port connections for 'u_dut'.  Expected 13, found 12.
-# ** Warning: ./test_hdlc.sv(51): (vopt-2718) [TFMPC] - Missing connection for port 'Tx_Done'.
 # //  Questa Sim-64
 # //  Version 10.5c linux_x86_64 Jul 20 2016
 # //
@@ -38,16 +40,15 @@
 # Loading work.testPr_hdlc(fast)
 # Loading work.assertions_hdlc(fast)
 # Loading work.bind_hdlc(fast)
+# 
 # log -r *
-#  run -all
+# run -all
 # *************************************************************
 #                    0 - Starting Test Program (receive)
 # *************************************************************
 # *************************************************************
 #                 1000 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -59,8 +60,6 @@
 # *************************************************************
 #                36250 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -72,8 +71,6 @@
 # *************************************************************
 #               125750 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -85,8 +82,6 @@
 # *************************************************************
 #               306750 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -98,8 +93,6 @@
 # *************************************************************
 #               608750 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -111,8 +104,6 @@
 # *************************************************************
 #               924250 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -121,101 +112,92 @@
 # PASS: All bytes in RxBuff equal to transmitted data
 # PASS: Rx_Ready was high for all the read bytes
 # PASS: Rx_Ready was low after reading all bytes
+# Starting constrained random testing
 # *************************************************************
-#              1718250 - Starting task Receive - FCS error
+#            123639250 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              1913750 - Starting task Receive - FCS error
+#            123799750 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              2172250 - Starting task Receive - FCS error
+#            123996750 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              2509250 - Starting task Receive - FCS error
+#            124254750 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              2854750 - Starting task Receive - FCS error
+#            124590250 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              3523250 - Starting task Receive - Non-byte aligned
+#            124938750 - Starting task Receive - FCS error
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
+# PASS: Rx_Overflow bit not set
+# PASS: Rx_AbortSignal bit not set
+# PASS: Rx_FrameError bit set
+# PASS: Rx_Ready bit not set
+# PASS: All bytes read from RxBuff are zero
+# Starting constrained random testing
+# *************************************************************
+#            250068250 - Starting task Receive - Non-byte aligned
+# *************************************************************
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              3684250 - Starting task Receive - Non-byte aligned
+#            250229250 - Starting task Receive - Non-byte aligned
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              4002750 - Starting task Receive - Non-byte aligned
+#            250549750 - Starting task Receive - Non-byte aligned
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              4656750 - Starting task Receive - Non-byte aligned
+#            251207250 - Starting task Receive - Non-byte aligned
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
+# Starting constrained random testing
 # *************************************************************
-#              5323750 - Starting task Receive - Abort
+#            372574250 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
@@ -223,20 +205,16 @@
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              5483250 - Starting task Receive - Abort
+#            372733750 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
 # PASS: Rx_FrameError bit not set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              5644250 - Starting task Receive - Abort
+#            372895250 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
@@ -244,20 +222,16 @@
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              5962750 - Starting task Receive - Abort
+#            373212750 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
 # PASS: Rx_FrameError bit not set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              6281750 - Starting task Receive - Abort
+#            373533250 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
@@ -265,31 +239,26 @@
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              6933250 - Starting task Receive - Abort
+#            374185250 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
 # PASS: Rx_FrameError bit not set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              7582750 - Starting task Receive - Abort
+#            374837250 - Starting task Receive - Abort
 # *************************************************************
-# PASS: Flag detect
-# PASS: Abort signal
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit set
 # PASS: Rx_FrameError bit not set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
+# Starting constrained random testing
 # *************************************************************
-#              8252750 - Starting task Receive - Overflow
+#            500129250 - Starting task Receive - Overflow
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError bit not set
@@ -297,17 +266,92 @@
 # PASS: Rx_Ready was high for all the read bytes
 # PASS: Rx_Ready was low after reading 126 bytes
 # PASS: All bytes read from RxBuff are zero
+# Starting constrained random testing
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
+# FAIL: Rx_Overflow bit not set
+# FAIL: Rx_FrameError bit set
+# FAIL: Rx_Ready was low after           0 received bytes
 # *************************************************************
-#              9185250 - Starting task Receive - Skip read
+#            773378250 - Starting task Receive - Skip read
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # *************************************************************
-#              9712250 - Starting task Receive - Normal
+#            773903250 - Starting task Receive - Normal
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_EoF is set
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
@@ -317,136 +361,131 @@
 # PASS: Rx_Ready was high for all the read bytes
 # PASS: Rx_Ready was low after reading all bytes
 # *************************************************************
-#              9802250 - Starting task Receive - Drop
+#            773993750 - Starting task Receive - Drop
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError not bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#              9999250 - Starting task Receive - Drop
+#            774190250 - Starting task Receive - Drop
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError not bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#             10261250 - Starting task Receive - Drop
+#            774453250 - Starting task Receive - Drop
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError not bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#             10604750 - Starting task Receive - Drop
+#            774796750 - Starting task Receive - Drop
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError not bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
 # *************************************************************
-#             10956250 - Starting task Receive - Drop
+#            775149250 - Starting task Receive - Drop
 # *************************************************************
-# PASS: Flag detect
-# PASS: Flag detect
 # PASS: Rx_Overflow bit not set
 # PASS: Rx_AbortSignal bit not set
 # PASS: Rx_FrameError not bit set
 # PASS: Rx_Ready bit not set
 # PASS: All bytes read from RxBuff are zero
+# Starting constrained random testing
 # *************************************************************
-#             11622750 - Starting Test Program (transmit)
+#           1196520750 - Starting Test Program (transmit)
 # *************************************************************
 # *************************************************************
-#             11622750 - Starting task Transmit - Normal
+#           1196520750 - Starting task Transmit - Normal
 # *************************************************************
 # PASS: Flag detected at beginning of bitstream
 # PASS: Flag detected at end of bitstream
 # PASS: Bistream matches data size (          3 bytes)
 # PASS: Data in bistream matches data sent
-# PASS: FCS in bistream matches expected FCS (8c56)
+# PASS: FCS in bistream matches expected FCS (1b6f)
 # PASS: Tx_Done is high after completed transmission
 # *************************************************************
-#             11689750 - Starting task Transmit - Normal
+#           1196588750 - Starting task Transmit - Normal
 # *************************************************************
 # PASS: Flag detected at beginning of bitstream
 # PASS: Flag detected at end of bitstream
 # PASS: Bistream matches data size (         26 bytes)
 # PASS: Data in bistream matches data sent
-# PASS: FCS in bistream matches expected FCS (2156)
+# PASS: FCS in bistream matches expected FCS (94a0)
 # PASS: Tx_Done is high after completed transmission
 # *************************************************************
-#             11999750 - Starting task Transmit - Normal
+#           1196899250 - Starting task Transmit - Normal
 # *************************************************************
 # PASS: Flag detected at beginning of bitstream
 # PASS: Flag detected at end of bitstream
 # PASS: Bistream matches data size (        100 bytes)
 # PASS: Data in bistream matches data sent
-# PASS: FCS in bistream matches expected FCS (5c36)
+# PASS: FCS in bistream matches expected FCS (0da7)
 # PASS: Tx_Done is high after completed transmission
 # *************************************************************
-#             13091750 - Starting task Transmit - Normal
+#           1197989750 - Starting task Transmit - Normal
 # *************************************************************
 # PASS: Tx_Full is high after writing 126 bytes to the buffer
 # PASS: Flag detected at beginning of bitstream
 # PASS: Flag detected at end of bitstream
 # PASS: Bistream matches data size (        126 bytes)
 # PASS: Data in bistream matches data sent
-# PASS: FCS in bistream matches expected FCS (a201)
+# PASS: FCS in bistream matches expected FCS (3c3f)
 # PASS: Tx_Done is high after completed transmission
+# Starting constrained random testing
 # *************************************************************
-#             14458250 - Starting task Transmit - Abort
+#           1411346250 - Starting task Transmit - Abort
 # *************************************************************
-# PASS: Abort flag generated
 # PASS: Flag detected at beginning of bitstream
 # PASS: Abort flag detected at end of bitstream
 # PASS: Tx_AbortedFrame is high after aborted transmission
 # *************************************************************
-#             14514750 - Starting task Transmit - Abort
+#           1411402750 - Starting task Transmit - Abort
 # *************************************************************
-# PASS: Abort flag generated
 # PASS: Flag detected at beginning of bitstream
 # PASS: Abort flag detected at end of bitstream
 # PASS: Tx_AbortedFrame is high after aborted transmission
 # *************************************************************
-#             14766750 - Starting task Transmit - Abort
+#           1411654750 - Starting task Transmit - Abort
 # *************************************************************
-# PASS: Abort flag generated
 # PASS: Flag detected at beginning of bitstream
 # PASS: Abort flag detected at end of bitstream
 # PASS: Tx_AbortedFrame is high after aborted transmission
 # *************************************************************
-#             15647750 - Starting task Transmit - Abort
+#           1412535750 - Starting task Transmit - Abort
 # *************************************************************
 # PASS: Tx_Full is high after writing 126 bytes to the buffer
-# PASS: Abort flag generated
 # PASS: Flag detected at beginning of bitstream
 # PASS: Abort flag detected at end of bitstream
 # PASS: Tx_AbortedFrame is high after aborted transmission
+# Starting constrained random testing
+# FAIL: No abort flag at end of bitstream
+# FAIL: No abort flag at end of bitstream
+# FAIL: No abort flag at end of bitstream
+# FAIL: No abort flag at end of bitstream
+# FAIL: No abort flag at end of bitstream
 # *************************************************************
-#             16750750 - Finishing Test Program
+#           1585342750 - Finishing Test Program
 # *************************************************************
-# ** Note: $stop    : ./testPr_hdlc.sv(433)
-#    Time: 16750750 ns  Iteration: 1  Instance: /test_hdlc/u_testPr
-# Break in Module testPr_hdlc at ./testPr_hdlc.sv line 433
-# Stopped at ./testPr_hdlc.sv line 433
-#  exit
+# ** Note: $stop    : testPr_hdlc.sv(649)
+#    Time: 1585342750 ns  Iteration: 1  Instance: /test_hdlc/u_testPr
+# Break in Module testPr_hdlc at testPr_hdlc.sv line 649
+# Stopped at testPr_hdlc.sv line 649
+#  coverage report -assert -cover -cvg -details -file coverage_rep.txt
+# exit
 # *********************************
 # *                               *
-# * 	Concurrent assertion Errors:           0	  *
+# * 	Assertion Errors:          83	  *
 # *                               *
 # *********************************
-# End time: 17:40:17 on Apr 08,2019, Elapsed time: 0:00:04
+# End time: 12:00:39 on Apr 23,2019, Elapsed time: 0:00:27
 # Errors: 0, Warnings: 2
